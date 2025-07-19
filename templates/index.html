@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Monitoring Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4299e1;
+            --success-color: #10B981;
+            --error-color: #EF4444;
+            --warning-color: #F59E0B;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f7fafc;
+            margin: 0;
+            padding: 20px;
+            color: #1a202c;
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #2d3748;
+            text-align: center;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .control-group label {
+            font-weight: 500;
+            color: #4a5568;
+            font-size: 0.875rem;
+        }
+
+        select {
+            padding: 0.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            color: #4a5568;
+            background: white;
+        }
+
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background: #3182ce;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 0.5rem 0;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: #718096;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .status {
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            display: none;
+        }
+
+        .status.success {
+            background: #DEF7EC;
+            color: #03543F;
+        }
+
+        .status.error {
+            background: #FDE8E8;
+            color: #9B1C1C;
+        }
+
+        .status.info {
+            background: #E1EFFE;
+            color: #1E429F;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>Department of Consumer Affairs - Price Monitoring Dashboard</h1>
+        </div>
+
+        <div id="status" class="status"></div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="commodity">Commodity</label>
+                <select id="commodity">
+                    {% for commodity in commodities %}
+                    <option value="{{ commodity }}">{{ commodity }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="market">Market</label>
+                <select id="market">
+                    {% for market in markets %}
+                    <option value="{{ market }}">{{ market }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>&nbsp;</label>
+                <button onclick="updateDashboard()">Update Dashboard</button>
+            </div>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-label">Current Price</div>
+                <div class="metric-value" id="currentPrice">-</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Price Change (7d)</div>
+                <div class="metric-value" id="priceChange">-</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Forecast Accuracy</div>
+                <div class="metric-value" id="forecastAccuracy">-</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div id="price-trend-chart"></div>
+        </div>
+
+        <div class="chart-container">
+            <div id="forecast-chart"></div>
+        </div>
+    </div>
+
+    <script>
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+            setTimeout(() => status.style.display = 'none', 3000);
+        }
+
+        function updateMetrics(data) {
+            const currentPrice = document.getElementById('currentPrice');
+            const priceChange = document.getElementById('priceChange');
+            const forecastAccuracy = document.getElementById('forecastAccuracy');
+
+            if (data && data.metrics) {
+                currentPrice.textContent = `₹${data.metrics.currentPrice?.toFixed(2) || '-'}`;
+                priceChange.textContent = `${data.metrics.priceChange?.toFixed(2) || '-'}%`;
+                forecastAccuracy.textContent = `${data.metrics.accuracy?.toFixed(1) || '-'}%`;
+            }
+        }
+
+        async function updateDashboard() {
+            const commodity = document.getElementById('commodity').value;
+            const market = document.getElementById('market').value;
+
+            showStatus('Loading dashboard...', 'info');
+
+            try {
+                const [trendData, forecastData] = await Promise.all([
+                    fetch(`/api/charts/price-trend/${commodity}/${market}`).then(r => r.json()),
+                    fetch(`/api/charts/forecast/${commodity}/${market}`).then(r => r.json())
+                ]);
+
+                Plotly.newPlot('price-trend-chart', trendData.data, trendData.layout);
+                Plotly.newPlot('forecast-chart', forecastData.data, forecastData.layout);
+                updateMetrics(trendData);
+                showStatus('Dashboard updated successfully', 'success');
+            } catch (error) {
+                console.error('Error updating dashboard:', error);
+                showStatus('Error updating dashboard', 'error');
+            }
+        }
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', updateDashboard);
+
+        // Auto-refresh every 5 minutes
+        setInterval(updateDashboard, 300000);
+    </script>
+</body>
+
+</html>

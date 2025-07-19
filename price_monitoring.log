@@ -1,0 +1,92 @@
+2025-07-19 20:20:41,114 - INFO - Initializing Price Monitoring System...
+2025-07-19 20:20:41,115 - INFO - Database initialized successfully
+2025-07-19 20:20:41,115 - INFO - Generating sample data...
+2025-07-19 20:20:41,165 - INFO - Buffer stock data initialized
+2025-07-19 20:20:41,203 - INFO - Inserted 3960 price records
+2025-07-19 20:20:41,204 - INFO - Generated 3960 sample records
+2025-07-19 20:20:41,204 - INFO - Generating initial forecasts...
+2025-07-19 20:20:41,212 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 20:20:41,217 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 20:20:41,222 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 20:20:41,226 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 20:20:41,227 - INFO - Scheduler setup complete
+2025-07-19 20:20:41,227 - INFO - Starting web application on http://localhost:5000
+2025-07-19 20:20:41,235 - WARNING - python-dotenv could not parse statement starting at line 4
+2025-07-19 20:20:41,235 - WARNING - python-dotenv could not parse statement starting at line 5
+2025-07-19 20:20:41,278 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.47:5000
+2025-07-19 20:20:41,279 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 20:20:41,280 - INFO -  * Restarting with stat
+2025-07-19 20:20:42,940 - INFO - Initializing Price Monitoring System...
+2025-07-19 20:20:42,941 - INFO - Database initialized successfully
+2025-07-19 20:20:42,941 - INFO - Generating sample data...
+2025-07-19 20:20:42,990 - INFO - Buffer stock data initialized
+2025-07-19 20:20:43,029 - INFO - Inserted 3960 price records
+2025-07-19 20:20:43,030 - INFO - Generated 3960 sample records
+2025-07-19 20:20:43,030 - INFO - Generating initial forecasts...
+2025-07-19 20:20:43,037 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 20:20:43,042 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 20:20:43,050 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 20:20:43,054 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 20:20:43,055 - INFO - Scheduler setup complete
+2025-07-19 20:20:43,056 - INFO - Starting web application on http://localhost:5000
+2025-07-19 20:20:43,063 - WARNING - python-dotenv could not parse statement starting at line 4
+2025-07-19 20:20:43,063 - WARNING - python-dotenv could not parse statement starting at line 5
+2025-07-19 20:20:43,083 - WARNING -  * Debugger is active!
+2025-07-19 20:20:43,085 - INFO -  * Debugger PIN: 101-519-984
+2025-07-19 20:20:56,607 - INFO - 192.168.0.47 - - [19/Jul/2025 20:20:56] "GET / HTTP/1.1" 200 -
+2025-07-19 20:20:57,716 - INFO - 192.168.0.47 - - [19/Jul/2025 20:20:57] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-19 20:20:57,719 - INFO - 192.168.0.47 - - [19/Jul/2025 20:20:57] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-19 20:20:58,204 - INFO - 192.168.0.47 - - [19/Jul/2025 20:20:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-19 20:21:05,280 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:05] "GET /api/charts/forecast/Wheat/Delhi HTTP/1.1" 200 -
+2025-07-19 20:21:05,283 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:05] "GET /api/charts/price-trend/Wheat/Delhi HTTP/1.1" 200 -
+2025-07-19 20:21:14,384 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:14] "GET /api/charts/forecast/Mustard%20Oil/Delhi HTTP/1.1" 200 -
+2025-07-19 20:21:14,438 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:14] "GET /api/charts/price-trend/Mustard%20Oil/Delhi HTTP/1.1" 200 -
+2025-07-19 20:21:27,094 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:27] "GET /api/charts/forecast/Tomato/Delhi HTTP/1.1" 200 -
+2025-07-19 20:21:27,098 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:27] "GET /api/charts/price-trend/Tomato/Delhi HTTP/1.1" 200 -
+2025-07-19 20:21:40,030 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:40] "GET /api/charts/forecast/Milk/Bengaluru HTTP/1.1" 200 -
+2025-07-19 20:21:40,035 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:40] "GET /api/charts/price-trend/Milk/Bengaluru HTTP/1.1" 200 -
+2025-07-19 20:21:51,944 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:51] "GET /api/charts/forecast/Milk/Kolkata HTTP/1.1" 200 -
+2025-07-19 20:21:51,956 - INFO - 192.168.0.47 - - [19/Jul/2025 20:21:51] "GET /api/charts/price-trend/Milk/Kolkata HTTP/1.1" 200 -
+2025-07-19 20:22:00,322 - INFO - 192.168.0.47 - - [19/Jul/2025 20:22:00] "GET /api/charts/forecast/Milk/Hyderabad HTTP/1.1" 200 -
+2025-07-19 20:22:00,376 - INFO - 192.168.0.47 - - [19/Jul/2025 20:22:00] "GET /api/charts/price-trend/Milk/Hyderabad HTTP/1.1" 200 -
+2025-07-19 16:56:30,605 - INFO - Initializing Price Monitoring System...
+2025-07-19 16:56:30,607 - INFO - Database initialized successfully
+2025-07-19 16:56:30,608 - INFO - Generating sample data...
+2025-07-19 16:56:30,673 - INFO - Buffer stock data initialized
+2025-07-19 16:56:30,733 - INFO - Inserted 3960 price records
+2025-07-19 16:56:30,734 - INFO - Generated 3960 sample records
+2025-07-19 16:56:30,734 - INFO - Generating initial forecasts...
+2025-07-19 16:56:30,743 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 16:56:30,750 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 16:56:30,755 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 16:56:30,763 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 16:56:30,764 - INFO - Scheduler setup complete
+2025-07-19 16:56:30,765 - INFO - Starting web application on http://localhost:5000
+2025-07-19 16:56:30,784 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.42.231:5000
+2025-07-19 16:56:30,785 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-19 16:56:30,785 - INFO -  * Restarting with stat
+2025-07-19 16:56:32,084 - INFO - Initializing Price Monitoring System...
+2025-07-19 16:56:32,085 - INFO - Database initialized successfully
+2025-07-19 16:56:32,086 - INFO - Generating sample data...
+2025-07-19 16:56:32,149 - INFO - Buffer stock data initialized
+2025-07-19 16:56:32,213 - INFO - Inserted 3960 price records
+2025-07-19 16:56:32,213 - INFO - Generated 3960 sample records
+2025-07-19 16:56:32,213 - INFO - Generating initial forecasts...
+2025-07-19 16:56:32,222 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 16:56:32,228 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 16:56:32,232 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 16:56:32,238 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-19 16:56:32,239 - INFO - Scheduler setup complete
+2025-07-19 16:56:32,240 - INFO - Starting web application on http://localhost:5000
+2025-07-19 16:56:32,248 - WARNING -  * Debugger is active!
+2025-07-19 16:56:32,261 - INFO -  * Debugger PIN: 644-398-576
+2025-07-19 16:56:37,650 - INFO - 192.168.32.1 - - [19/Jul/2025 16:56:37] "GET / HTTP/1.1" 200 -
+2025-07-19 16:56:39,424 - INFO - 192.168.32.1 - - [19/Jul/2025 16:56:39] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-19 16:56:39,428 - INFO - 192.168.32.1 - - [19/Jul/2025 16:56:39] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-19 16:56:40,640 - INFO - 192.168.32.1 - - [19/Jul/2025 16:56:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
