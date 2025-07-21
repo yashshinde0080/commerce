@@ -1,0 +1,6 @@
+/resource/35985678-0d79-46b4-9ed6-6f13308a1d24
+
+API_KEYS = {
+    'data_gov': '/resource/35985678-0d79-46b4-9ed6-6f13308a1d24',  # Get from https://data.gov.in/
+    'agmarknet': '/resource/your_agmarknet_api_key',  # Get from Agmarknet portal
+}

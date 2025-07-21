@@ -4,259 +4,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Price Monitoring Dashboard</title>
+    <title>Price Monitoring Homepage</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* --- Root Variables for Themes --- */
         :root {
-            --primary-color: #4299e1;
-            --success-color: #10B981;
-            --error-color: #EF4444;
-            --warning-color: #F59E0B;
+            /* Light Theme */
+            --bg-grad-start-light: #F4F7FC;
+            --bg-grad-end-light: #E2E8F0;
+            --bg-card-light: rgba(255, 255, 255, 0.8);
+            --text-dark-light: #1A202C;
+            --text-muted-light: #4A5568;
+            --border-light: rgba(0, 0, 0, 0.1);
+            --shadow-color-light: rgba(0, 0, 0, 0.08);
+            --primary-color-light: #3B82F6; /* Softer Blue */
+            --accent-color-light: #10B981;
+            --primary-grad-start-light: #60A5FA;
+            --primary-grad-end-light: #3B82F6;
+            --accent-grad-start-light: #34D399;
+            --accent-grad-end-light: #A7F3D0;
+
+            /* Dark Theme */
+            --bg-grad-start-dark: #111827;
+            --bg-grad-end-dark: #1F2937;
+            --bg-card-dark: rgba(31, 41, 55, 0.8);
+            --select-bg-dark: #1F2937;
+            --text-dark-dark: #F9FAFB;
+            --text-muted-dark: #9CA3AF;
+            --border-dark: rgba(255, 255, 255, 0.1);
+            --shadow-color-dark: rgba(0, 0, 0, 0.3);
+            --primary-color-dark: #60A5FA;
+            --accent-color-dark: #34D399;
+            --primary-grad-start-dark: #93C5FD;
+            --primary-grad-end-dark: #60A5FA;
+            --accent-grad-start-dark: #6EE7B7;
+            --accent-grad-end-dark: #34D399;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #f7fafc;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--bg-grad-start-light), var(--bg-grad-end-light));
+            background-size: 200% 200%;
+            animation: gradientBG 20s ease infinite;
             margin: 0;
-            padding: 20px;
-            color: #1a202c;
+            padding-top: 80px; /* Space for sticky navbar */
+            line-height: 1.7;
+            transition: background 0.5s ease;
+            color: var(--text-dark-light);
         }
 
-        .dashboard {
-            max-width: 1400px;
-            margin: 0 auto;
+        body.dark-theme {
+            background: linear-gradient(135deg, var(--bg-grad-start-dark), var(--bg-grad-end-dark));
+            color: var(--text-dark-dark);
         }
 
-        .header {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1.5rem;
+        .page-wrapper {
+            max-width: 1400px; margin: 0 auto; display: flex;
+            flex-direction: column;
+            padding: 2rem; /* Added padding to all sides */
         }
-
-        .header h1 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: #2d3748;
-            text-align: center;
-        }
-
-        .controls {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1.5rem;
-        }
-
-        .control-group {
+        
+        main {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 7rem; /* Increased separation between sections */
         }
 
-        .control-group label {
-            font-weight: 500;
-            color: #4a5568;
-            font-size: 0.875rem;
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes rotate { 100% { transform: rotate(1turn); } }
+
+        .themed {
+            background-color: var(--bg-card-light);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 8px 32px 0 var(--shadow-color-light);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+            border-radius: 16px;
         }
+        body.dark-theme .themed {
+            background-color: var(--bg-card-dark);
+            border: 1px solid var(--border-dark);
+            box-shadow: 0 8px 32px 0 var(--shadow-color-dark);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: inherit;
+        }
+
+        /* --- Sticky Navbar & Hamburger Menu --- */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem;
+        }
+        .navbar-brand h1 { font-size: clamp(1.2rem, 3vw, 1.5rem); margin: 0; }
+        .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-links a { text-decoration: none; font-weight: 500; font-size: 1rem; color: var(--text-muted-light); transition: color 0.3s ease; }
+        body.dark-theme .nav-links a { color: var(--text-muted-dark); }
+        .nav-links a:hover { color: var(--primary-color-light); }
+        body.dark-theme .nav-links a:hover { color: var(--primary-color-dark); }
+
+        .nav-toggle { display: none; } /* Hidden on desktop */
+
+        /* Classic Toggle Switch */
+        .theme-switch-wrapper { display: flex; align-items: center; }
+        .theme-switch {
+            display: inline-block; height: 22px;
+            position: relative; width: 40px;
+        }
+        .theme-switch input { display: none; }
+        .slider {
+            background-color: #ccc; bottom: 0; left: 0; right: 0; top: 0;
+            cursor: pointer; position: absolute;
+            transition: .4s; border-radius: 22px;
+        }
+        .slider:before {
+            background-color: #fff; bottom: 3px; content: "";
+            height: 16px; left: 3px; position: absolute;
+            transition: .4s; width: 16px; border-radius: 50%;
+        }
+        input:checked + .slider { background-color: var(--primary-color-light); }
+        body.dark-theme input:checked + .slider { background-color: var(--primary-color-dark); }
+        input:checked + .slider:before { transform: translateX(18px); }
+
+        /* --- Page Sections --- */
+        .page-section { padding: 3rem 2rem; margin:3%;}
+        .page-section h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); text-align: center; margin-top: 0; margin-bottom: 3rem; }
+
+        /* --- About Section Layout --- */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-image { flex: 1; min-width: 300px; text-align: center; }
+        .about-image img { max-width: 100%; height: 300px; border-radius: 12px; box-shadow: 0 4px 15px var(--shadow-color-light); }
+        body.dark-theme .about-image img { box-shadow: 0 4px 15px var(--shadow-color-dark); }
+
+        /* --- Controls --- */
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem; padding: 1.5rem 2rem; align-items: end;
+        }
+        .control-group label { font-weight: 500; font-size: 1rem; margin-bottom: 0.75rem; display: block; color: var(--text-muted-light); }
+        body.dark-theme .control-group label { color: var(--text-muted-dark); }
+
+        select, button {
+            width: 100%; padding: 0.75rem 1.2rem;
+            font-size: 1rem; font-family: 'Roboto', sans-serif;
+            border-radius: 8px; transition: all 0.3s ease;
+            box-sizing: border-box;
+            background-color: rgba(0,0,0,0.05);
+            color: var(--text-dark-light);
+            border: 1px solid transparent;
+        }
+        body.dark-theme select { background-color: var(--select-bg-dark); color: var(--text-dark-dark); border: 1px solid var(--border-dark); }
+        body.dark-theme button { background-color: rgba(255,255,255,0.05); color: var(--text-dark-dark); }
 
         select {
-            padding: 0.5rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.375rem;
-            font-size: 0.875rem;
-            color: #4a5568;
-            background: white;
+            -webkit-appearance: none; -moz-appearance: none; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%234A5568' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em;
+        }
+        body.dark-theme select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+        }
+        
+        select:focus, button:focus {
+            outline: none; border-color: var(--primary-color-light);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        body.dark-theme select:focus, body.dark-theme button:focus {
+            border-color: var(--primary-color-dark);
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
         }
 
         button {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s;
+            background: var(--primary-color-light); color: white;
+            font-weight: 500; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.6rem;
+            box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.3);
         }
-
-        button:hover {
-            background: #3182ce;
+        button:hover { background: #2563EB; box-shadow: 0 6px 16px 0 rgba(59, 130, 246, 0.35); }
+        body.dark-theme button {
+            background: var(--primary-color-dark); color: #111827;
+            box-shadow: 0 4px 14px 0 rgba(96, 165, 250, 0.3);
         }
-
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        body.dark-theme button:hover { background: #93C5FD; box-shadow: 0 6px 16px 0 rgba(96, 165, 250, 0.35); }
+        button:disabled { background-color: #9CA3AF !important; cursor: not-allowed; box-shadow: none !important; }
+        
+        .spinner {
+            width: 1em; height: 1em; border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            animation: spin 0.8s linear infinite;
         }
+        body.dark-theme .spinner { border-top-color: #111827; }
 
+        /* --- Metrics & Charts --- */
+        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
         .metric-card {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            border: 1px solid transparent; /* Base border for hover transition */
+            padding: 0; /* Remove padding to let content handle it */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative; overflow: hidden;
         }
-
-        .metric-value {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2d3748;
-            margin: 0.5rem 0;
+        .metric-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px var(--shadow-color-light);
+            border-color: var(--primary-color-light);
         }
-
-        .metric-label {
-            font-size: 0.875rem;
-            color: #718096;
+        body.dark-theme .metric-card:hover {
+             box-shadow: 0 12px 24px var(--shadow-color-dark);
+             border-color: var(--primary-color-dark);
         }
+        .metric-card::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(transparent, rgba(60, 130, 246, 0.15), transparent 30%);
+            animation: rotate 4s linear infinite;
+        }
+        body.dark-theme .metric-card::before { background: conic-gradient(transparent, rgba(96, 165, 250, 0.15), transparent 30%); }
+        .metric-card-content {
+            position: relative; z-index: 1;
+            background: inherit;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .metric-value { font-size: clamp(2rem, 5vw, 2.5rem); font-weight: 700; margin: 0.5rem 0; display: block; color: var(--primary-color-light); }
+        body.dark-theme .metric-value { color: var(--primary-color-dark); }
+        .metric-label { font-size: 1rem; font-weight: 400; color: var(--text-muted-light); }
+        body.dark-theme .metric-label { color: var(--text-muted-dark); }
 
         .chart-container {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1.5rem;
+            min-height: 400px; padding: 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            border: 2px solid var(--border-light);
         }
-
+        body.dark-theme .chart-container { border: 2px solid var(--border-dark); }
+        #price-trend-chart, #forecast-chart { width: 100%; height: 100%; }
+        
+        /* --- Footer --- */
+        .footer { text-align: center; padding: 2rem; margin-top: 2rem; color: var(--text-muted-light); }
+        body.dark-theme .footer { color: var(--text-muted-dark); }
+        
         .status {
-            padding: 1rem;
-            border-radius: 0.375rem;
-            margin-bottom: 1rem;
-            font-size: 0.875rem;
-            display: none;
+            padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600;
+            text-align: center; display: none; opacity: 0; position: fixed;
+            top: 90px; left: 50%; transform: translateX(-50%); z-index: 1000;
+            border: 1px solid transparent; transition: opacity 0.5s ease-out;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .status.success {
-            background: #DEF7EC;
-            color: #03543F;
-        }
+        /* --- Responsive Navbar --- */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+                background: none; border: none; cursor: pointer;
+                padding: 0; z-index: 1001;
+            }
+            .nav-toggle .hamburger {
+                display: block; width: 25px; height: 3px;
+                background-color: var(--text-dark-light);
+                border-radius: 3px; position: relative;
+                transition: transform 0.3s ease;
+            }
+            body.dark-theme .nav-toggle .hamburger { background-color: var(--text-dark-dark); }
+            .nav-toggle .hamburger::before,
+            .nav-toggle .hamburger::after {
+                content: ''; position: absolute; left: 0;
+                width: 100%; height: 3px;
+                background-color: var(--text-dark-light);
+                border-radius: 3px;
+                transition: transform 0.3s ease, top 0.3s ease;
+            }
+            body.dark-theme .nav-toggle .hamburger::before,
+            body.dark-theme .nav-toggle .hamburger::after { background-color: var(--text-dark-dark); }
+            .nav-toggle .hamburger::before { top: -8px; }
+            .nav-toggle .hamburger::after { top: 8px; }
 
-        .status.error {
-            background: #FDE8E8;
-            color: #9B1C1C;
-        }
+            .nav-links {
+                position: fixed; top: 0; right: 0;
+                width: 70%; height: 100vh;
+                background-color: var(--bg-card-light);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                flex-direction: column; justify-content: flex-start;
+                padding-top: 6rem;
+                align-items: center; gap: 2rem;
+                transform: translateX(100%);
+                transition: transform 0.4s ease-in-out;
+            }
+            body.dark-theme .nav-links { background-color: var(--bg-card-dark); }
+            .nav-links.active { transform: translateX(0); }
+            .nav-links a { font-size: 1.2rem; }
+            .theme-switch-wrapper {
+                display: none; /* Hide toggle switch in mobile menu */
+            }
 
-        .status.info {
-            background: #E1EFFE;
-            color: #1E429F;
+            .nav-toggle.active .hamburger { background-color: transparent; }
+            .nav-toggle.active .hamburger::before { top: 0; transform: rotate(45deg); }
+            .nav-toggle.active .hamburger::after { top: 0; transform: rotate(-45deg); }
         }
     </style>
 </head>
 
 <body>
-    <div class="dashboard">
-        <div class="header">
+    <nav class="navbar themed">
+        <div class="navbar-brand">
             <h1>Department of Consumer Affairs - Price Monitoring Dashboard</h1>
         </div>
-
-        <div id="status" class="status"></div>
-
-        <div class="controls">
-            <div class="control-group">
-                <label for="commodity">Commodity</label>
-                <select id="commodity">
-                    {% for commodity in commodities %}
-                    <option value="{{ commodity }}">{{ commodity }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <div class="control-group">
-                <label for="market">Market</label>
-                <select id="market">
-                    {% for market in markets %}
-                    <option value="{{ market }}">{{ market }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <div class="control-group">
-                <label>&nbsp;</label>
-                <button onclick="updateDashboard()">Update Dashboard</button>
+        <div class="nav-links" id="nav-links">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="theme-toggle">
+                    <input type="checkbox" id="theme-toggle" />
+                    <span class="slider"></span>
+                </label>
             </div>
         </div>
+        <button class="nav-toggle" id="nav-toggle">
+            <span class="hamburger"></span>
+        </button>
+    </nav>
 
-        <div class="metrics">
-            <div class="metric-card">
-                <div class="metric-label">Current Price</div>
-                <div class="metric-value" id="currentPrice">-</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-label">Price Change (7d)</div>
-                <div class="metric-value" id="priceChange">-</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-label">Forecast Accuracy</div>
-                <div class="metric-value" id="forecastAccuracy">-</div>
-            </div>
-        </div>
+    <div class="page-wrapper">
+        <main>
+            <section id="dashboard" class="page-section">
+                <h2>Price Monitoring Dashboard</h2>
+                <div id="dashboard-meta" style="text-align: center; margin-bottom: 2rem; color: var(--text-muted-light);"></div>
+                <body.dark-theme #dashboard-meta { color: var(--text-muted-dark); }
 
-        <div class="chart-container">
-            <div id="price-trend-chart"></div>
-        </div>
+                <div id="status" class="status"></div>
 
-        <div class="chart-container">
-            <div id="forecast-chart"></div>
-        </div>
-    </div>
+                <div class="controls themed" style="margin-bottom: 1.5rem;">
+                    <div class="control-group">
+                        <label for="commodity">Commodity</label>
+                        <select id="commodity">
+                            {% for commodity in commodities %}
+                            <option value="{{ commodity }}">{{ commodity }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="market">Market</label>
+                        <select id="market">
+                            {% for market in markets %}
+                            <option value="{{ market }}">{{ market }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>&nbsp;</label>
+                        <button id="updateButton">
+                            Update Dashboard
+                            <span id="loadingSpinner" style="display: none;"><div class="spinner"></div></span>
+                        </button>
+                    </div>
+                </div>
 
-    <script>
-        function showStatus(message, type) {
-            const status = document.getElementById('status');
-            status.textContent = message;
-            status.className = `status ${type}`;
-            status.style.display = 'block';
-            setTimeout(() => status.style.display = 'none', 3000);
-        }
+                <div class="metrics" style="margin-bottom: 1.5rem;">
+                    <div class="metric-card themed">
+                        <div class="metric-card-content">
+                            <div class="metric-label">Current Price</div>
+                            <div class="metric-value" id="currentPrice">-</div>
+                        </div>
+                    </div>
+                    <div class="metric-card themed">
+                        <div class="metric-card-content">
+                            <div class="metric-label">Price Change (7d)</div>
+                            <div class="metric-value" id="priceChange">-</div>
+                        </div>
+                    </div>
+                    <div class="metric-card themed">
+                        <div class="metric-card-content">
+                            <div class="metric-label">Forecast Accuracy</div>
+                            <div class="metric-value" id="forecastAccuracy">-</div>
+                        </div>
+                    </div>
+                </div>
 
-        function updateMetrics(data) {
-            const currentPrice = document.getElementById('currentPrice');
-            const priceChange = document.getElementById('priceChange');
-            const forecastAccuracy = document.getElementById('forecastAccuracy');
+                <div class="chart-container themed" style="margin-bottom: 1.5rem;">
+                    <div id="price-trend-chart"></div>
+                </div>
+                <div class="chart-container themed">
+                    <div id="forecast-chart"></div>
+                </div>
+            </section>
 
-            if (data && data.metrics) {
-                currentPrice.textContent = `₹${data.metrics.currentPrice?.toFixed(2) || '-'}`;
-                priceChange.textContent = `${data.metrics.priceChange?.toFixed(2) || '-'}%`;
-                forecastAccuracy.textContent = `${data.metrics.accuracy?.toFixed(1) || '-'}%`;
-            }
-        }
+            <section id="about" class="page-section themed">
+                <h2>About This Initiative</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>The Department of Consumer Affairs is committed to protecting and promoting the welfare of consumers. This Price Monitoring Dashboard is a key initiative towards ensuring transparency and stability in the market. By tracking the daily prices of essential commodities across various centers in the country, we aim to provide valuable insights to policymakers, researchers, and the general public.</p>
+                        <p>Our goal is to detect and curb price volatility, ensuring that essential goods remain affordable for all citizens. The data collected is rigorously analyzed to forecast price trends, helping the government make timely interventions when necessary.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="data:image/png;base64,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" alt ="stats-analysis">
+                     </div>
+                     </div>
+</section>
 
-        async function updateDashboard() {
-            const commodity = document.getElementById('commodity').value;
-            const market = document.getElementById('market').value;
+        <section id="contact" class="page-section themed">
+        <h2>Contact Us</h2>
+                <p>For any queries, suggestions, or to report discrepancies, please feel free to reach out to us. Your feedback is crucial for the continuous improvement of this platform.</p>
+                <strong>Email:</strong> <a href="mailto:yashshinde0080" style="color: var(--primary-color-light);">Yash Shinde</a><br>
+               
+            </section>
+        </main>
 
-            showStatus('Loading dashboard...', 'info');
+        <footer class="footer">
+            <p>&copy; 2025 Price Monitoring Project. Created for demonstration purposes.</p>
+        </footer>
+    </div>
 
-            try {
-                const [trendData, forecastData] = await Promise.all([
-                    fetch(`/api/charts/price-trend/${commodity}/${market}`).then(r => r.json()),
-                    fetch(`/api/charts/forecast/${commodity}/${market}`).then(r => r.json())
-                ]);
+    <script>
+        // --- Helper Functions ---
+        function showStatus(message, type) {
+            const el = document.getElementById('status');
+            el.textContent = message; el.className = `status ${type}`; el.style.display = 'block';
+            setTimeout(() => { el.style.opacity = 1; }, 10);
+            setTimeout(() => { el.style.opacity = 0; setTimeout(() => el.style.display = 'none', 3000); }, 3000);
+        }
 
-                Plotly.newPlot('price-trend-chart', trendData.data, trendData.layout);
-                Plotly.newPlot('forecast-chart', forecastData.data, forecastData.layout);
-                updateMetrics(trendData);
-                showStatus('Dashboard updated successfully', 'success');
-            } catch (error) {
-                console.error('Error updating dashboard:', error);
-                showStatus('Error updating dashboard', 'error');
-            }
-        }
+        function updateMetrics(data) {
+            const metrics = [ { id: 'currentPrice', key: 'currentPrice', unit: '₹', fixed: 2 }, { id: 'priceChange', key: 'priceChange', unit: '%', fixed: 1 }, { id: 'forecastAccuracy', key: 'accuracy', unit: '%', fixed: 1 } ];
+            metrics.forEach(metric => {
+                const el = document.getElementById(metric.id);
+                const val = data?.metrics?.[metric.key];
+                if (val !== undefined && val !== null) { let disp = `${val.toFixed(metric.fixed)}${metric.unit || ''}`; if (metric.id === 'currentPrice') disp = `₹${val.toFixed(metric.fixed)}`; if (metric.id === 'priceChange' && val > 0) disp = `+${disp}`; el.textContent = disp; } else { el.textContent = '-'; }
+            });
+        }
+        
+        function toggleLoading(isLoading) {
+            document.getElementById('updateButton').disabled = isLoading;
+            document.getElementById('loadingSpinner').style.display = isLoading ? 'block' : 'none';
+        }
 
-        // Initial load
-        document.addEventListener('DOMContentLoaded', updateDashboard);
+        // --- Main Dashboard Update Logic ---
+        async function updateDashboard() {
+            toggleLoading(true);
+            showStatus('Fetching latest data...', 'info');
+            const isDark = document.body.classList.contains('dark-theme');
+            const commodity = document.getElementById('commodity').value;
+            const market = document.getElementById('market').value;
 
-        // Auto-refresh every 5 minutes
-        setInterval(updateDashboard, 300000);
-    </script>
+            try {
+                // --- REAL API CALLS ---
+                const [trendResponse, forecastResponse] = await Promise.all([
+                    fetch(`/api/charts/price-trend/${encodeURIComponent(commodity)}/${encodeURIComponent(market)}`),
+                    fetch(`/api/charts/forecast/${encodeURIComponent(commodity)}/${encodeURIComponent(market)}`)
+                ]);
+
+                if (!trendResponse.ok || !forecastResponse.ok) {
+                    throw new Error(`API Error: ${trendResponse.statusText || forecastResponse.statusText}`);
+                }
+
+                const trendData = await trendResponse.json();
+                const forecastData = await forecastResponse.json();
+                
+                // --- DYNAMIC THEME & COLOR LOGIC ---
+                const primaryGradStart = getComputedStyle(document.documentElement).getPropertyValue(isDark ? '--primary-grad-start-dark' : '--primary-grad-start-light');
+                const primaryGradEnd = getComputedStyle(document.documentElement).getPropertyValue(isDark ? '--primary-grad-end-dark' : '--primary-grad-end-light');
+                const accentGradStart = getComputedStyle(document.documentElement).getPropertyValue(isDark ? '--accent-grad-start-dark' : '--accent-grad-start-light');
+                const accentGradEnd = getComputedStyle(document.documentElement).getPropertyValue(isDark ? '--accent-grad-end-dark' : '--accent-grad-end-light');
+                
+                if (trendData.data && trendData.data[0]) {
+                    trendData.data[0].line = { ...trendData.data[0].line, color: primaryGradEnd, gradient: { type: 'linear', color: [primaryGradStart, primaryGradEnd] }, shape: 'spline', smoothing: 1.3, width: 4 };
+                }
+                if (forecastData.data && forecastData.data[0]) {
+                    forecastData.data[0].line = { ...forecastData.data[0].line, color: primaryGradEnd, gradient: { type: 'linear', color: [primaryGradStart, primaryGradEnd] }, width: 3 };
+                }
+                if (forecastData.data && forecastData.data[1]) {
+                    forecastData.data[1].line = { ...forecastData.data[1].line, color: accentGradEnd, gradient: { type: 'linear', color: [accentGradStart, accentGradEnd] }, dash: 'dot', width: 3 };
+                }
+
+                const commonLayoutUpdates = {
+                    paper_bgcolor: 'transparent', plot_bgcolor: 'transparent',
+                    font: { color: isDark ? '#F9FAFB' : '#1A202C', family: 'Roboto, sans-serif' },
+                    xaxis: { gridcolor: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', tickfont: { color: isDark ? '#9CA3AF' : '#4A5568' }, title: { font: { color: isDark ? '#F9FAFB' : '#1A202C' } } },
+                    yaxis: { gridcolor: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)', tickfont: { color: isDark ? '#9CA3AF' : '#4A5568' }, title: { font: { color: isDark ? '#F9FAFB' : '#1A202C' } } },
+                    legend: { font: { color: isDark ? '#9CA3AF' : '#4A5568' }, orientation: 'h', y: -0.2, xanchor: 'center', x: 0.5 }
+                };
+
+                Plotly.newPlot('price-trend-chart', trendData.data || [], { ...trendData.layout, ...commonLayoutUpdates }, { responsive: true, displaylogo: false });
+                Plotly.newPlot('forecast-chart', forecastData.data || [], { ...forecastData.layout, ...commonLayoutUpdates }, { responsive: true, displaylogo: false });
+
+                updateMetrics(trendData);
+                showStatus('Dashboard updated successfully!', 'success');
+            } catch (error) {
+                console.error('Error updating dashboard:', error);
+                showStatus(`Error: ${error.message}`, 'error');
+                Plotly.purge('price-trend-chart');
+                Plotly.purge('forecast-chart');
+            } finally {
+                toggleLoading(false);
+            }
+        }
+
+        // --- Event Listeners & Initial Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const updateButton = document.getElementById('updateButton');
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('nav-links');
+            
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeToggle.checked = true;
+            }
+
+            themeToggle.addEventListener('change', () => {
+                document.body.classList.toggle('dark-theme');
+                localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+                updateDashboard();
+            });
+            
+            updateButton.addEventListener('click', updateDashboard);
+
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            document.getElementById('dashboard-meta').textContent = `Location: Belagavi, Karnataka, India | Last Updated: Monday, July 21, 2025 at 9:15 PM IST`;
+            
+            updateDashboard();
+
+            setInterval(updateDashboard, 300000);
+
+            window.addEventListener('resize', () => {
+                try {
+                    Plotly.Plots.resize(document.getElementById('price-trend-chart'));
+                    Plotly.Plots.resize(document.getElementById('forecast-chart'));
+                } catch(e) {
+                    console.error("Error resizing charts: ", e);
+                }
+            });
+
+            window.onscroll = () => {
+                const progressBar = document.getElementById("progress-bar");
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = scrollPercentage + "%";
+            };
+        });
+ </script>
 </body>
-
 </html>
