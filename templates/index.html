@@ -137,7 +137,7 @@
         input:checked + .slider:before { transform: translateX(18px); }
 
         /* --- Page Sections --- */
-        .page-section { padding: 3rem 2rem; margin:3%;}
+        .page-section { padding: 3rem 2rem; margin:2%; text-align:center}
         .page-section h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); text-align: center; margin-top: 0; margin-bottom: 3rem; }
 
         /* --- About Section Layout --- */
@@ -221,6 +221,7 @@
             padding: 0; /* Remove padding to let content handle it */
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             position: relative; overflow: hidden;
+            text-align:center;
         }
         .metric-card:hover {
             transform: translateY(-8px);
@@ -233,10 +234,10 @@
         }
         .metric-card::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(transparent, rgba(60, 130, 246, 0.15), transparent 30%);
+            background: conic-gradient(transparent, rgba(162, 212, 255, 0.77), transparent 30%);
             animation: rotate 4s linear infinite;
         }
-        body.dark-theme .metric-card::before { background: conic-gradient(transparent, rgba(96, 165, 250, 0.15), transparent 30%); }
+        body.dark-theme .metric-card::before { background: conic-gradient(transparent, rgba(164, 204, 253, 0.15), transparent 30%); }
         .metric-card-content {
             position: relative; z-index: 1;
             background: inherit;
@@ -416,7 +417,7 @@
                         <p>Our goal is to detect and curb price volatility, ensuring that essential goods remain affordable for all citizens. The data collected is rigorously analyzed to forecast price trends, helping the government make timely interventions when necessary.</p>
                     </div>
                     <div class="about-image">
-                        <img src="data:image/png;base64,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" alt ="stats-analysis">
+                        <img src="https://img.freepik.com/free-vector/stock-market-analysis-with-chart_23-2148584739.jpg?semt=ais_hybrid&w=740" alt ="stats-analysis">
                      </div>
                      </div>
 </section>
@@ -424,8 +425,6 @@
         <section id="contact" class="page-section themed">
         <h2>Contact Us</h2>
                 <p>For any queries, suggestions, or to report discrepancies, please feel free to reach out to us. Your feedback is crucial for the continuous improvement of this platform.</p>
-                <strong>Email:</strong> <a href="mailto:yashshinde0080" style="color: var(--primary-color-light);">Yash Shinde</a><br>
-               
             </section>
         </main>
 

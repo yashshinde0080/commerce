@@ -1760,3 +1760,581 @@
 2025-07-21 22:52:24,884 - INFO - 127.0.0.1 - - [21/Jul/2025 22:52:24] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
 2025-07-21 22:52:24,930 - INFO - 127.0.0.1 - - [21/Jul/2025 22:52:24] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
 2025-07-21 22:52:38,040 - INFO - 127.0.0.1 - - [21/Jul/2025 22:52:38] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-07-22 09:42:16,846 - INFO - Initializing Price Monitoring System...
+2025-07-22 09:42:16,854 - INFO - Database initialized successfully
+2025-07-22 09:42:16,854 - INFO - Generating sample data...
+2025-07-22 09:42:16,894 - INFO - Buffer stock data initialized
+2025-07-22 09:42:16,949 - INFO - Inserted 3960 price records
+2025-07-22 09:42:16,950 - INFO - Generated 3960 sample records
+2025-07-22 09:42:16,950 - INFO - Generating initial forecasts...
+2025-07-22 09:42:16,958 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:42:16,964 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:42:16,968 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:42:16,974 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:42:16,975 - INFO - Scheduler setup complete
+2025-07-22 09:42:16,976 - INFO - Starting web application on http://localhost:5000
+2025-07-22 09:42:17,065 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 09:42:17,066 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 09:42:17,067 - INFO -  * Restarting with stat
+2025-07-22 09:42:18,757 - INFO - Initializing Price Monitoring System...
+2025-07-22 09:42:18,758 - INFO - Database initialized successfully
+2025-07-22 09:42:18,758 - INFO - Generating sample data...
+2025-07-22 09:42:18,798 - INFO - Buffer stock data initialized
+2025-07-22 09:42:18,832 - INFO - Inserted 3960 price records
+2025-07-22 09:42:18,833 - INFO - Generated 3960 sample records
+2025-07-22 09:42:18,833 - INFO - Generating initial forecasts...
+2025-07-22 09:42:18,840 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:42:18,847 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:42:18,851 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:42:18,857 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:42:18,857 - INFO - Scheduler setup complete
+2025-07-22 09:42:18,858 - INFO - Starting web application on http://localhost:5000
+2025-07-22 09:42:18,874 - WARNING -  * Debugger is active!
+2025-07-22 09:42:18,879 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 09:42:27,301 - INFO - 127.0.0.1 - - [22/Jul/2025 09:42:27] "GET / HTTP/1.1" 200 -
+2025-07-22 09:42:27,787 - INFO - 127.0.0.1 - - [22/Jul/2025 09:42:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 09:42:29,026 - INFO - 127.0.0.1 - - [22/Jul/2025 09:42:29] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 09:42:29,081 - INFO - 127.0.0.1 - - [22/Jul/2025 09:42:29] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 09:42:30,464 - INFO - 127.0.0.1 - - [22/Jul/2025 09:42:30] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 09:42:30,514 - INFO - 127.0.0.1 - - [22/Jul/2025 09:42:30] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 09:42:38,150 - INFO - 127.0.0.1 - - [22/Jul/2025 09:42:38] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 09:42:38,158 - INFO - 127.0.0.1 - - [22/Jul/2025 09:42:38] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 09:44:03,039 - INFO - Initializing Price Monitoring System...
+2025-07-22 09:44:03,041 - INFO - Database initialized successfully
+2025-07-22 09:44:03,041 - INFO - Generating sample data...
+2025-07-22 09:44:03,080 - INFO - Buffer stock data initialized
+2025-07-22 09:44:03,112 - INFO - Inserted 3960 price records
+2025-07-22 09:44:03,113 - INFO - Generated 3960 sample records
+2025-07-22 09:44:03,113 - INFO - Generating initial forecasts...
+2025-07-22 09:44:03,120 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:44:03,124 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:44:03,130 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:44:03,135 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:44:03,135 - INFO - Scheduler setup complete
+2025-07-22 09:44:03,137 - INFO - Starting web application on http://localhost:5000
+2025-07-22 09:44:03,165 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 09:44:03,166 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 09:44:03,167 - INFO -  * Restarting with stat
+2025-07-22 09:44:04,955 - INFO - Initializing Price Monitoring System...
+2025-07-22 09:44:04,957 - INFO - Database initialized successfully
+2025-07-22 09:44:04,957 - INFO - Generating sample data...
+2025-07-22 09:44:05,013 - INFO - Buffer stock data initialized
+2025-07-22 09:44:05,048 - INFO - Inserted 3960 price records
+2025-07-22 09:44:05,048 - INFO - Generated 3960 sample records
+2025-07-22 09:44:05,049 - INFO - Generating initial forecasts...
+2025-07-22 09:44:05,057 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:44:05,064 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:44:05,071 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:44:05,076 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 09:44:05,077 - INFO - Scheduler setup complete
+2025-07-22 09:44:05,078 - INFO - Starting web application on http://localhost:5000
+2025-07-22 09:44:05,096 - WARNING -  * Debugger is active!
+2025-07-22 09:44:05,101 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 09:44:06,105 - INFO - 127.0.0.1 - - [22/Jul/2025 09:44:06] "GET / HTTP/1.1" 200 -
+2025-07-22 09:44:06,153 - INFO - 127.0.0.1 - - [22/Jul/2025 09:44:06] "[33mGET /commerce/templates/Images/Data.jpg HTTP/1.1[0m" 404 -
+2025-07-22 09:44:08,574 - INFO - 127.0.0.1 - - [22/Jul/2025 09:44:08] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 09:44:08,748 - INFO - 127.0.0.1 - - [22/Jul/2025 09:44:08] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:03:25,178 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:03:25,184 - INFO - Database initialized successfully
+2025-07-22 10:03:25,184 - INFO - Generating sample data...
+2025-07-22 10:03:25,225 - INFO - Buffer stock data initialized
+2025-07-22 10:03:25,282 - INFO - Inserted 3960 price records
+2025-07-22 10:03:25,282 - INFO - Generated 3960 sample records
+2025-07-22 10:03:25,282 - INFO - Generating initial forecasts...
+2025-07-22 10:03:25,302 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:03:25,308 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:03:25,314 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:03:25,319 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:03:25,319 - INFO - Scheduler setup complete
+2025-07-22 10:03:25,320 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:03:25,361 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 10:03:25,361 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 10:03:25,362 - INFO -  * Restarting with stat
+2025-07-22 10:03:27,215 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:03:27,216 - INFO - Database initialized successfully
+2025-07-22 10:03:27,217 - INFO - Generating sample data...
+2025-07-22 10:03:27,261 - INFO - Buffer stock data initialized
+2025-07-22 10:03:27,297 - INFO - Inserted 3960 price records
+2025-07-22 10:03:27,298 - INFO - Generated 3960 sample records
+2025-07-22 10:03:27,298 - INFO - Generating initial forecasts...
+2025-07-22 10:03:27,306 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:03:27,313 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:03:27,319 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:03:27,325 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:03:27,327 - INFO - Scheduler setup complete
+2025-07-22 10:03:27,328 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:03:27,342 - WARNING -  * Debugger is active!
+2025-07-22 10:03:27,347 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 10:03:27,748 - INFO - 127.0.0.1 - - [22/Jul/2025 10:03:27] "GET / HTTP/1.1" 200 -
+2025-07-22 10:03:27,810 - INFO - 127.0.0.1 - - [22/Jul/2025 10:03:27] "[33mGET /commerce/templates/Images/Data.jpg HTTP/1.1[0m" 404 -
+2025-07-22 10:04:22,050 - INFO - 127.0.0.1 - - [22/Jul/2025 10:04:22] "GET / HTTP/1.1" 200 -
+2025-07-22 10:04:22,160 - INFO - 127.0.0.1 - - [22/Jul/2025 10:04:22] "[33mGET /commerce/templates/Images/Data.jpg HTTP/1.1[0m" 404 -
+2025-07-22 10:04:43,871 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:04:43,872 - INFO - Database initialized successfully
+2025-07-22 10:04:43,872 - INFO - Generating sample data...
+2025-07-22 10:04:43,913 - INFO - Buffer stock data initialized
+2025-07-22 10:04:43,948 - INFO - Inserted 3960 price records
+2025-07-22 10:04:43,949 - INFO - Generated 3960 sample records
+2025-07-22 10:04:43,949 - INFO - Generating initial forecasts...
+2025-07-22 10:04:43,956 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:04:43,961 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:04:43,966 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:04:43,974 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:04:43,975 - INFO - Scheduler setup complete
+2025-07-22 10:04:43,976 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:04:44,017 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 10:04:44,017 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 10:04:44,019 - INFO -  * Restarting with stat
+2025-07-22 10:04:45,785 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:04:45,786 - INFO - Database initialized successfully
+2025-07-22 10:04:45,787 - INFO - Generating sample data...
+2025-07-22 10:04:45,827 - INFO - Buffer stock data initialized
+2025-07-22 10:04:45,859 - INFO - Inserted 3960 price records
+2025-07-22 10:04:45,860 - INFO - Generated 3960 sample records
+2025-07-22 10:04:45,860 - INFO - Generating initial forecasts...
+2025-07-22 10:04:45,867 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:04:45,874 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:04:45,878 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:04:45,884 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:04:45,884 - INFO - Scheduler setup complete
+2025-07-22 10:04:45,885 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:04:45,901 - WARNING -  * Debugger is active!
+2025-07-22 10:04:45,906 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 10:04:50,730 - INFO - 127.0.0.1 - - [22/Jul/2025 10:04:50] "GET / HTTP/1.1" 200 -
+2025-07-22 10:04:50,772 - INFO - 127.0.0.1 - - [22/Jul/2025 10:04:50] "[33mGET /commerce/templates/Images/Data.jpg HTTP/1.1[0m" 404 -
+2025-07-22 10:05:42,019 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:05:42,021 - INFO - Database initialized successfully
+2025-07-22 10:05:42,021 - INFO - Generating sample data...
+2025-07-22 10:05:42,059 - INFO - Buffer stock data initialized
+2025-07-22 10:05:42,128 - INFO - Inserted 3960 price records
+2025-07-22 10:05:42,129 - INFO - Generated 3960 sample records
+2025-07-22 10:05:42,129 - INFO - Generating initial forecasts...
+2025-07-22 10:05:42,146 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:05:42,152 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:05:42,159 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:05:42,165 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:05:42,165 - INFO - Scheduler setup complete
+2025-07-22 10:05:42,166 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:05:42,200 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 10:05:42,200 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 10:05:42,202 - INFO -  * Restarting with stat
+2025-07-22 10:05:44,083 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:05:44,085 - INFO - Database initialized successfully
+2025-07-22 10:05:44,086 - INFO - Generating sample data...
+2025-07-22 10:05:44,132 - INFO - Buffer stock data initialized
+2025-07-22 10:05:44,169 - INFO - Inserted 3960 price records
+2025-07-22 10:05:44,170 - INFO - Generated 3960 sample records
+2025-07-22 10:05:44,170 - INFO - Generating initial forecasts...
+2025-07-22 10:05:44,177 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:05:44,186 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:05:44,193 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:05:44,201 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:05:44,202 - INFO - Scheduler setup complete
+2025-07-22 10:05:44,203 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:05:44,228 - WARNING -  * Debugger is active!
+2025-07-22 10:05:44,233 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 10:05:44,882 - INFO - 127.0.0.1 - - [22/Jul/2025 10:05:44] "GET / HTTP/1.1" 200 -
+2025-07-22 10:05:47,537 - INFO - 127.0.0.1 - - [22/Jul/2025 10:05:47] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:05:47,577 - INFO - 127.0.0.1 - - [22/Jul/2025 10:05:47] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:05:56,108 - INFO - 127.0.0.1 - - [22/Jul/2025 10:05:56] "GET /api/charts/forecast/Gram%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:05:56,119 - INFO - 127.0.0.1 - - [22/Jul/2025 10:05:56] "GET /api/charts/price-trend/Gram%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:06:01,064 - INFO - 127.0.0.1 - - [22/Jul/2025 10:06:01] "GET /api/charts/forecast/Gram%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:06:01,098 - INFO - 127.0.0.1 - - [22/Jul/2025 10:06:01] "GET /api/charts/price-trend/Gram%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:06:03,812 - INFO - 127.0.0.1 - - [22/Jul/2025 10:06:03] "GET /api/charts/forecast/Gram%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:06:03,823 - INFO - 127.0.0.1 - - [22/Jul/2025 10:06:03] "GET /api/charts/price-trend/Gram%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:09:21,585 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:09:21,586 - INFO - Database initialized successfully
+2025-07-22 10:09:21,587 - INFO - Generating sample data...
+2025-07-22 10:09:21,626 - INFO - Buffer stock data initialized
+2025-07-22 10:09:21,658 - INFO - Inserted 3960 price records
+2025-07-22 10:09:21,659 - INFO - Generated 3960 sample records
+2025-07-22 10:09:21,659 - INFO - Generating initial forecasts...
+2025-07-22 10:09:21,667 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:09:21,676 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:09:21,688 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:09:21,712 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:09:21,712 - INFO - Scheduler setup complete
+2025-07-22 10:09:21,714 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:09:21,756 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 10:09:21,757 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 10:09:21,758 - INFO -  * Restarting with stat
+2025-07-22 10:09:23,521 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:09:23,522 - INFO - Database initialized successfully
+2025-07-22 10:09:23,523 - INFO - Generating sample data...
+2025-07-22 10:09:23,569 - INFO - Buffer stock data initialized
+2025-07-22 10:09:23,611 - INFO - Inserted 3960 price records
+2025-07-22 10:09:23,611 - INFO - Generated 3960 sample records
+2025-07-22 10:09:23,611 - INFO - Generating initial forecasts...
+2025-07-22 10:09:23,620 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:09:23,628 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:09:23,633 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:09:23,640 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:09:23,641 - INFO - Scheduler setup complete
+2025-07-22 10:09:23,643 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:09:23,670 - WARNING -  * Debugger is active!
+2025-07-22 10:09:23,677 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 10:09:24,697 - INFO - 127.0.0.1 - - [22/Jul/2025 10:09:24] "GET / HTTP/1.1" 200 -
+2025-07-22 10:09:26,422 - INFO - 127.0.0.1 - - [22/Jul/2025 10:09:26] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:09:26,468 - INFO - 127.0.0.1 - - [22/Jul/2025 10:09:26] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:09:30,295 - INFO - 127.0.0.1 - - [22/Jul/2025 10:09:30] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:09:30,301 - INFO - 127.0.0.1 - - [22/Jul/2025 10:09:30] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:09:36,113 - INFO - 127.0.0.1 - - [22/Jul/2025 10:09:36] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:09:36,122 - INFO - 127.0.0.1 - - [22/Jul/2025 10:09:36] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:10:37,170 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:10:37,171 - INFO - Database initialized successfully
+2025-07-22 10:10:37,172 - INFO - Generating sample data...
+2025-07-22 10:10:37,211 - INFO - Buffer stock data initialized
+2025-07-22 10:10:37,244 - INFO - Inserted 3960 price records
+2025-07-22 10:10:37,244 - INFO - Generated 3960 sample records
+2025-07-22 10:10:37,245 - INFO - Generating initial forecasts...
+2025-07-22 10:10:37,252 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:10:37,257 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:10:37,263 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:10:37,269 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:10:37,270 - INFO - Scheduler setup complete
+2025-07-22 10:10:37,271 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:10:37,300 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 10:10:37,301 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 10:10:37,302 - INFO -  * Restarting with stat
+2025-07-22 10:10:39,190 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:10:39,191 - INFO - Database initialized successfully
+2025-07-22 10:10:39,191 - INFO - Generating sample data...
+2025-07-22 10:10:39,232 - INFO - Buffer stock data initialized
+2025-07-22 10:10:39,268 - INFO - Inserted 3960 price records
+2025-07-22 10:10:39,268 - INFO - Generated 3960 sample records
+2025-07-22 10:10:39,269 - INFO - Generating initial forecasts...
+2025-07-22 10:10:39,276 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:10:39,282 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:10:39,289 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:10:39,296 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:10:39,297 - INFO - Scheduler setup complete
+2025-07-22 10:10:39,298 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:10:39,329 - WARNING -  * Debugger is active!
+2025-07-22 10:10:39,333 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 10:10:39,667 - INFO - 127.0.0.1 - - [22/Jul/2025 10:10:39] "GET / HTTP/1.1" 200 -
+2025-07-22 10:10:41,650 - INFO - 127.0.0.1 - - [22/Jul/2025 10:10:41] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:10:41,683 - INFO - 127.0.0.1 - - [22/Jul/2025 10:10:41] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:10:45,391 - INFO - 127.0.0.1 - - [22/Jul/2025 10:10:45] "GET /api/charts/forecast/Gram%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:10:45,435 - INFO - 127.0.0.1 - - [22/Jul/2025 10:10:45] "GET /api/charts/price-trend/Gram%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:10:47,348 - INFO - 127.0.0.1 - - [22/Jul/2025 10:10:47] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:10:47,350 - INFO - 127.0.0.1 - - [22/Jul/2025 10:10:47] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:10:52,603 - INFO - 127.0.0.1 - - [22/Jul/2025 10:10:52] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:10:52,611 - INFO - 127.0.0.1 - - [22/Jul/2025 10:10:52] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:15,146 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:11:15,147 - INFO - Database initialized successfully
+2025-07-22 10:11:15,148 - INFO - Generating sample data...
+2025-07-22 10:11:15,185 - INFO - Buffer stock data initialized
+2025-07-22 10:11:15,222 - INFO - Inserted 3960 price records
+2025-07-22 10:11:15,222 - INFO - Generated 3960 sample records
+2025-07-22 10:11:15,222 - INFO - Generating initial forecasts...
+2025-07-22 10:11:15,230 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:15,236 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:15,242 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:15,249 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:15,250 - INFO - Scheduler setup complete
+2025-07-22 10:11:15,251 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:11:15,289 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 10:11:15,289 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 10:11:15,291 - INFO -  * Restarting with stat
+2025-07-22 10:11:17,138 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:11:17,139 - INFO - Database initialized successfully
+2025-07-22 10:11:17,140 - INFO - Generating sample data...
+2025-07-22 10:11:17,190 - INFO - Buffer stock data initialized
+2025-07-22 10:11:17,227 - INFO - Inserted 3960 price records
+2025-07-22 10:11:17,227 - INFO - Generated 3960 sample records
+2025-07-22 10:11:17,228 - INFO - Generating initial forecasts...
+2025-07-22 10:11:17,236 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:17,246 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:17,256 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:17,297 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:17,297 - INFO - Scheduler setup complete
+2025-07-22 10:11:17,298 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:11:17,330 - WARNING -  * Debugger is active!
+2025-07-22 10:11:17,335 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 10:11:17,733 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:17] "GET / HTTP/1.1" 200 -
+2025-07-22 10:11:19,393 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:19] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:19,435 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:19] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:30,105 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:30] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:30,116 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:30] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:31,489 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:31] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:31,534 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:31] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:52,401 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:11:52,403 - INFO - Database initialized successfully
+2025-07-22 10:11:52,403 - INFO - Generating sample data...
+2025-07-22 10:11:52,443 - INFO - Buffer stock data initialized
+2025-07-22 10:11:52,478 - INFO - Inserted 3960 price records
+2025-07-22 10:11:52,478 - INFO - Generated 3960 sample records
+2025-07-22 10:11:52,478 - INFO - Generating initial forecasts...
+2025-07-22 10:11:52,486 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:52,491 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:52,497 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:52,505 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:52,505 - INFO - Scheduler setup complete
+2025-07-22 10:11:52,506 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:11:52,538 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 10:11:52,538 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 10:11:52,540 - INFO -  * Restarting with stat
+2025-07-22 10:11:54,339 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:11:54,340 - INFO - Database initialized successfully
+2025-07-22 10:11:54,341 - INFO - Generating sample data...
+2025-07-22 10:11:54,384 - INFO - Buffer stock data initialized
+2025-07-22 10:11:54,417 - INFO - Inserted 3960 price records
+2025-07-22 10:11:54,418 - INFO - Generated 3960 sample records
+2025-07-22 10:11:54,418 - INFO - Generating initial forecasts...
+2025-07-22 10:11:54,426 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:54,431 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:54,437 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:54,444 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:11:54,444 - INFO - Scheduler setup complete
+2025-07-22 10:11:54,446 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:11:54,465 - WARNING -  * Debugger is active!
+2025-07-22 10:11:54,470 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 10:11:54,851 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:54] "GET / HTTP/1.1" 200 -
+2025-07-22 10:11:56,387 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:56] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:56,432 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:56] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:59,874 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:59] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:11:59,884 - INFO - 127.0.0.1 - - [22/Jul/2025 10:11:59] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:12:05,242 - INFO - 127.0.0.1 - - [22/Jul/2025 10:12:05] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:12:05,320 - INFO - 127.0.0.1 - - [22/Jul/2025 10:12:05] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:13:34,074 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:13:34,075 - INFO - Database initialized successfully
+2025-07-22 10:13:34,076 - INFO - Generating sample data...
+2025-07-22 10:13:34,115 - INFO - Buffer stock data initialized
+2025-07-22 10:13:34,149 - INFO - Inserted 3960 price records
+2025-07-22 10:13:34,149 - INFO - Generated 3960 sample records
+2025-07-22 10:13:34,149 - INFO - Generating initial forecasts...
+2025-07-22 10:13:34,157 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:13:34,161 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:13:34,168 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:13:34,172 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:13:34,173 - INFO - Scheduler setup complete
+2025-07-22 10:13:34,175 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:13:34,213 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 10:13:34,213 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 10:13:34,215 - INFO -  * Restarting with stat
+2025-07-22 10:13:36,030 - INFO - Initializing Price Monitoring System...
+2025-07-22 10:13:36,031 - INFO - Database initialized successfully
+2025-07-22 10:13:36,032 - INFO - Generating sample data...
+2025-07-22 10:13:36,075 - INFO - Buffer stock data initialized
+2025-07-22 10:13:36,112 - INFO - Inserted 3960 price records
+2025-07-22 10:13:36,112 - INFO - Generated 3960 sample records
+2025-07-22 10:13:36,113 - INFO - Generating initial forecasts...
+2025-07-22 10:13:36,121 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:13:36,128 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:13:36,134 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:13:36,140 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 10:13:36,141 - INFO - Scheduler setup complete
+2025-07-22 10:13:36,142 - INFO - Starting web application on http://localhost:5000
+2025-07-22 10:13:36,156 - WARNING -  * Debugger is active!
+2025-07-22 10:13:36,165 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 10:13:36,546 - INFO - 127.0.0.1 - - [22/Jul/2025 10:13:36] "GET / HTTP/1.1" 200 -
+2025-07-22 10:13:38,177 - INFO - 127.0.0.1 - - [22/Jul/2025 10:13:38] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:13:38,191 - INFO - 127.0.0.1 - - [22/Jul/2025 10:13:38] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:13:43,798 - INFO - 127.0.0.1 - - [22/Jul/2025 10:13:43] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 10:13:43,840 - INFO - 127.0.0.1 - - [22/Jul/2025 10:13:43] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:06:18,180 - INFO - Initializing Price Monitoring System...
+2025-07-22 11:06:18,188 - INFO - Database initialized successfully
+2025-07-22 11:06:18,189 - INFO - Generating sample data...
+2025-07-22 11:06:18,241 - INFO - Buffer stock data initialized
+2025-07-22 11:06:18,303 - INFO - Inserted 3960 price records
+2025-07-22 11:06:18,304 - INFO - Generated 3960 sample records
+2025-07-22 11:06:18,304 - INFO - Generating initial forecasts...
+2025-07-22 11:06:18,327 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:06:18,331 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:06:18,338 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:06:18,342 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:06:18,343 - INFO - Scheduler setup complete
+2025-07-22 11:06:18,345 - INFO - Starting web application on http://localhost:5000
+2025-07-22 11:06:18,381 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 11:06:18,381 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 11:06:18,384 - INFO -  * Restarting with stat
+2025-07-22 11:06:20,381 - INFO - Initializing Price Monitoring System...
+2025-07-22 11:06:20,383 - INFO - Database initialized successfully
+2025-07-22 11:06:20,383 - INFO - Generating sample data...
+2025-07-22 11:06:20,435 - INFO - Buffer stock data initialized
+2025-07-22 11:06:20,469 - INFO - Inserted 3960 price records
+2025-07-22 11:06:20,470 - INFO - Generated 3960 sample records
+2025-07-22 11:06:20,470 - INFO - Generating initial forecasts...
+2025-07-22 11:06:20,478 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:06:20,482 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:06:20,489 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:06:20,496 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:06:20,496 - INFO - Scheduler setup complete
+2025-07-22 11:06:20,497 - INFO - Starting web application on http://localhost:5000
+2025-07-22 11:06:20,513 - WARNING -  * Debugger is active!
+2025-07-22 11:06:20,521 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 11:06:28,067 - INFO - 127.0.0.1 - - [22/Jul/2025 11:06:28] "GET / HTTP/1.1" 200 -
+2025-07-22 11:06:28,570 - INFO - 127.0.0.1 - - [22/Jul/2025 11:06:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 11:06:29,358 - INFO - 127.0.0.1 - - [22/Jul/2025 11:06:29] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:06:29,395 - INFO - 127.0.0.1 - - [22/Jul/2025 11:06:29] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:06:41,229 - INFO - 127.0.0.1 - - [22/Jul/2025 11:06:41] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:06:41,237 - INFO - 127.0.0.1 - - [22/Jul/2025 11:06:41] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:07:55,465 - INFO - Initializing Price Monitoring System...
+2025-07-22 11:07:55,466 - INFO - Database initialized successfully
+2025-07-22 11:07:55,467 - INFO - Generating sample data...
+2025-07-22 11:07:55,506 - INFO - Buffer stock data initialized
+2025-07-22 11:07:55,546 - INFO - Inserted 3960 price records
+2025-07-22 11:07:55,546 - INFO - Generated 3960 sample records
+2025-07-22 11:07:55,546 - INFO - Generating initial forecasts...
+2025-07-22 11:07:55,555 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:07:55,561 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:07:55,568 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:07:55,574 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:07:55,575 - INFO - Scheduler setup complete
+2025-07-22 11:07:55,577 - INFO - Starting web application on http://localhost:5000
+2025-07-22 11:07:55,611 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 11:07:55,612 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 11:07:55,613 - INFO -  * Restarting with stat
+2025-07-22 11:07:57,555 - INFO - Initializing Price Monitoring System...
+2025-07-22 11:07:57,556 - INFO - Database initialized successfully
+2025-07-22 11:07:57,556 - INFO - Generating sample data...
+2025-07-22 11:07:57,596 - INFO - Buffer stock data initialized
+2025-07-22 11:07:57,636 - INFO - Inserted 3960 price records
+2025-07-22 11:07:57,637 - INFO - Generated 3960 sample records
+2025-07-22 11:07:57,637 - INFO - Generating initial forecasts...
+2025-07-22 11:07:57,646 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:07:57,652 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:07:57,657 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:07:57,664 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:07:57,664 - INFO - Scheduler setup complete
+2025-07-22 11:07:57,666 - INFO - Starting web application on http://localhost:5000
+2025-07-22 11:07:57,688 - WARNING -  * Debugger is active!
+2025-07-22 11:07:57,693 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 11:08:03,067 - INFO - 127.0.0.1 - - [22/Jul/2025 11:08:03] "GET / HTTP/1.1" 200 -
+2025-07-22 11:08:04,731 - INFO - 127.0.0.1 - - [22/Jul/2025 11:08:04] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:08:04,762 - INFO - 127.0.0.1 - - [22/Jul/2025 11:08:04] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:09:55,596 - INFO - Initializing Price Monitoring System...
+2025-07-22 11:09:55,597 - INFO - Database initialized successfully
+2025-07-22 11:09:55,598 - INFO - Generating sample data...
+2025-07-22 11:09:55,639 - INFO - Buffer stock data initialized
+2025-07-22 11:09:55,675 - INFO - Inserted 3960 price records
+2025-07-22 11:09:55,676 - INFO - Generated 3960 sample records
+2025-07-22 11:09:55,676 - INFO - Generating initial forecasts...
+2025-07-22 11:09:55,685 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:09:55,695 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:09:55,700 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:09:55,705 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:09:55,705 - INFO - Scheduler setup complete
+2025-07-22 11:09:55,706 - INFO - Starting web application on http://localhost:5000
+2025-07-22 11:09:55,740 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 11:09:55,740 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 11:09:55,742 - INFO -  * Restarting with stat
+2025-07-22 11:09:57,676 - INFO - Initializing Price Monitoring System...
+2025-07-22 11:09:57,677 - INFO - Database initialized successfully
+2025-07-22 11:09:57,678 - INFO - Generating sample data...
+2025-07-22 11:09:57,724 - INFO - Buffer stock data initialized
+2025-07-22 11:09:57,755 - INFO - Inserted 3960 price records
+2025-07-22 11:09:57,756 - INFO - Generated 3960 sample records
+2025-07-22 11:09:57,756 - INFO - Generating initial forecasts...
+2025-07-22 11:09:57,763 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:09:57,768 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:09:57,773 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:09:57,778 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:09:57,779 - INFO - Scheduler setup complete
+2025-07-22 11:09:57,780 - INFO - Starting web application on http://localhost:5000
+2025-07-22 11:09:57,797 - WARNING -  * Debugger is active!
+2025-07-22 11:09:57,803 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 11:10:02,293 - INFO - 127.0.0.1 - - [22/Jul/2025 11:10:02] "GET / HTTP/1.1" 200 -
+2025-07-22 11:10:04,081 - INFO - 127.0.0.1 - - [22/Jul/2025 11:10:04] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:10:04,087 - INFO - 127.0.0.1 - - [22/Jul/2025 11:10:04] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:06,454 - INFO - Initializing Price Monitoring System...
+2025-07-22 11:11:06,483 - INFO - Database initialized successfully
+2025-07-22 11:11:06,490 - INFO - Generating sample data...
+2025-07-22 11:11:06,884 - INFO - Buffer stock data initialized
+2025-07-22 11:11:07,379 - INFO - Inserted 3960 price records
+2025-07-22 11:11:07,381 - INFO - Generated 3960 sample records
+2025-07-22 11:11:07,386 - INFO - Generating initial forecasts...
+2025-07-22 11:11:07,614 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:11:07,822 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:11:07,941 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:11:08,082 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:11:08,087 - INFO - Scheduler setup complete
+2025-07-22 11:11:08,354 - INFO - Starting web application on http://localhost:5000
+2025-07-22 11:11:09,270 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.0.180:5000
+2025-07-22 11:11:09,274 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 11:11:09,307 - INFO -  * Restarting with stat
+2025-07-22 11:11:31,663 - INFO - Initializing Price Monitoring System...
+2025-07-22 11:11:31,665 - INFO - Database initialized successfully
+2025-07-22 11:11:31,665 - INFO - Generating sample data...
+2025-07-22 11:11:31,731 - INFO - Buffer stock data initialized
+2025-07-22 11:11:31,779 - INFO - Inserted 3960 price records
+2025-07-22 11:11:31,780 - INFO - Generated 3960 sample records
+2025-07-22 11:11:31,780 - INFO - Generating initial forecasts...
+2025-07-22 11:11:31,791 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:11:31,806 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:11:31,820 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:11:31,833 - ERROR - Error generating simple forecast: agg function failed [how->mean,dtype->object]
+2025-07-22 11:11:31,834 - INFO - Scheduler setup complete
+2025-07-22 11:11:31,835 - INFO - Starting web application on http://localhost:5000
+2025-07-22 11:11:31,864 - WARNING -  * Debugger is active!
+2025-07-22 11:11:31,871 - INFO -  * Debugger PIN: 122-415-118
+2025-07-22 11:11:31,916 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:31] "GET / HTTP/1.1" 200 -
+2025-07-22 11:11:31,927 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:31] "GET / HTTP/1.1" 200 -
+2025-07-22 11:11:32,459 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:32] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:32,479 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:32] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:32,558 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:32] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:32,613 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:32] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:32,648 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:32] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:32,702 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:32] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:41,422 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:41] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:41,426 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:41] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:56,783 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:56] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:11:56,787 - INFO - 127.0.0.1 - - [22/Jul/2025 11:11:56] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:01,675 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:01] "GET /api/charts/price-trend/Masur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:01,704 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:01] "GET /api/charts/forecast/Masur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:26,653 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:26] "GET /api/charts/forecast/Masur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:26,654 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:26] "GET /api/charts/price-trend/Masur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:27,316 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:27] "GET /api/charts/forecast/Masur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:27,360 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:27] "GET /api/charts/price-trend/Masur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:34,626 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:34] "GET /api/charts/forecast/Salt/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:34,629 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:34] "GET /api/charts/price-trend/Salt/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:44,948 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:44] "GET /api/charts/forecast/Gur/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:44,953 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:44] "GET /api/charts/price-trend/Gur/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:57,326 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:57] "GET /api/charts/forecast/Gur/Delhi HTTP/1.1" 200 -
+2025-07-22 11:12:57,336 - INFO - 127.0.0.1 - - [22/Jul/2025 11:12:57] "GET /api/charts/price-trend/Gur/Delhi HTTP/1.1" 200 -
+2025-07-22 11:13:04,335 - INFO - 127.0.0.1 - - [22/Jul/2025 11:13:04] "GET /api/charts/forecast/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:13:04,353 - INFO - 127.0.0.1 - - [22/Jul/2025 11:13:04] "GET /api/charts/price-trend/Tur%20Dal/Delhi HTTP/1.1" 200 -
+2025-07-22 11:13:11,732 - INFO - 127.0.0.1 - - [22/Jul/2025 11:13:11] "GET /api/charts/forecast/Gur/Delhi HTTP/1.1" 200 -
+2025-07-22 11:13:11,746 - INFO - 127.0.0.1 - - [22/Jul/2025 11:13:11] "GET /api/charts/price-trend/Gur/Delhi HTTP/1.1" 200 -
